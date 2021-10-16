@@ -9,7 +9,8 @@ class UserSerializers(serializers.ModelSerializer):
 class GameSerializers(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ['id','name','players']
+        fields = ['id','name', "player"]
+        depth = 2
 
 class PlayerSerializers(serializers.ModelSerializer):
     class Meta:

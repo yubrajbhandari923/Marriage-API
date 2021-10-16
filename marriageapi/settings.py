@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'API',
-    'auth',
+    'custom_auth',
     'rest_framework',
     'rest_framework_simplejwt',
     'django.contrib.admin',
@@ -133,3 +134,5 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+ACCESS_TOKEN_LIFETIME = timedelta(days=10)
